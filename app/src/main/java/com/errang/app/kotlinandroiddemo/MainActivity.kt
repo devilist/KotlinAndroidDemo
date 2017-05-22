@@ -1,16 +1,22 @@
 package com.errang.app.kotlinandroiddemo
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.LinearLayoutManager
 import android.view.View
+import com.errang.app.kotlinandroiddemo.API.RequestForecastCommand
+import com.errang.app.kotlinandroiddemo.adapter.ForecastListAdapter
 import kotlinx.android.synthetic.main.activity_main.*
-import org.jetbrains.anko.leftPadding
-import org.jetbrains.anko.toast
+import org.jetbrains.anko.doAsync
+import org.jetbrains.anko.uiThread
 
-class MainActivity : AppCompatActivity(),
+class MainActivity : BaseActivity(),
         View.OnClickListener {
 
-    var TAG: String = "MainActivity"
+    // 静态常量（伴随对象）
+    companion object {
+        val TAG: String = "MainActivity"
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,19 +26,21 @@ class MainActivity : AppCompatActivity(),
     }
 
     fun initView() {
-        tv_hello.text = "hello,kotlin!"
-        tv_hello.leftPadding = 10
-        tv_hello.textSize = 24f
-        tv_hello.setOnClickListener(this)
+        forecast_list.layoutManager = LinearLayoutManager(this)
+
+        doAsync {
+            val result = RequestForecastCommand("94043").execute()
+            uiThread {
+                forecast_list.adapter = ForecastListAdapter(result)
+            }
+        }
+
     }
 
     override fun onClick(v: View?) {
         when (v) {
-            tv_hello -> {
-                toast(TAG)
-            }
 
         }
-
     }
+
 }
