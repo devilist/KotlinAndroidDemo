@@ -1,6 +1,6 @@
-package com.errang.app.kotlinandroiddemo.API
+package com.errang.app.kotlinandroiddemo.demo_0_forecast.API
 
-import com.errang.app.kotlinandroiddemo.model.ForecastResult
+import com.errang.app.kotlinandroiddemo.demo_0_forecast.model.ForecastResult
 import com.google.gson.Gson
 import java.net.URL
 
@@ -8,7 +8,7 @@ import java.net.URL
  * 简单的数据请求
  * Created by zengpu on 2017/5/22.
  */
-class SimpleRequest(val zipCode: String) {
+class SimpleRequest(private val zipCode: String) {
 
     companion object {
         private val APP_ID = "15646a06818f61f7b8d7823ca833e1ce"

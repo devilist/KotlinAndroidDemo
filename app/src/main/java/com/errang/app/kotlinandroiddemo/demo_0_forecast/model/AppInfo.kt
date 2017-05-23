@@ -1,4 +1,4 @@
-package com.errang.app.kotlinandroiddemo.model
+package com.errang.app.kotlinandroiddemo.demo_0_forecast.model
 
 import android.graphics.drawable.Drawable
 

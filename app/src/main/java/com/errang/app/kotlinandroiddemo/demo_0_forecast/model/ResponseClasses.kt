@@ -1,4 +1,4 @@
-package com.errang.app.kotlinandroiddemo.model
+package com.errang.app.kotlinandroiddemo.demo_0_forecast.model
 
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
@@ -8,7 +8,7 @@ import java.io.Serializable
  */
 
 data class ForecastResult(val city: City,
-                          val list: List<Forecast>)
+                          val list: MutableList<Forecast>)
 
 data class City(@SerializedName(value = "id") val id: Long,
                 val name: String,

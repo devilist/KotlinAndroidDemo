@@ -1,4 +1,4 @@
-package com.errang.app.kotlinandroiddemo.API
+package com.errang.app.kotlinandroiddemo.demo_0_forecast.API
 
 /**
  * Created by zepung on 2017/5/22.
