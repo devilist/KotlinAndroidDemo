@@ -1,4 +1,4 @@
-package com.errang.app.kotlinandroiddemo.custom_delegates
+package com.errang.app.kotlinandroiddemo._custom_delegates
 
 import kotlin.properties.ReadWriteProperty
 

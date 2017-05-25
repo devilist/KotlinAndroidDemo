@@ -8,6 +8,7 @@ import com.errang.app.kotlinandroiddemo.R
 import com.errang.app.kotlinandroiddemo.demo_0_forecast.API.RequestForecastCommand
 import com.errang.app.kotlinandroiddemo.demo_0_forecast.adapter.ForecastListAdapter
 import com.errang.app.kotlinandroiddemo.demo_0_forecast.model.Forecast
+import com.errang.app.kotlinandroiddemo.demo_1_db.dao.ForecastDao
 import kotlinx.android.synthetic.main.activity_demo_0_forecast.*
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
@@ -38,6 +39,7 @@ class ForecastActivity : BaseActivity(),
      */
     private var adapter: ForecastListAdapter by Delegates.notNull()
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_demo_0_forecast)
@@ -56,6 +58,9 @@ class ForecastActivity : BaseActivity(),
             uiThread {
                 adapter.setNewData(result.list.asReversed())
             }
+            //存数据库
+            val dao = ForecastDao()
+            dao.saveForecastToLocalDB(result)
         }
     }
 

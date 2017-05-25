@@ -43,6 +43,8 @@ dependencies {
     compile "org.jetbrains.anko:anko-appcompat-v7:$anko_version"
     compile "org.jetbrains.anko:anko-recyclerview-v7:$anko_version"
     compile "org.jetbrains.anko:anko-cardview-v7:$anko_version"
+    // Anko SQLite
+    compile "org.jetbrains.anko:anko-sqlite:$anko_version"
 
     // anko的所有依赖库
 //    // Anko has a meta-dependency which plugs in all available features
