@@ -1,4 +1,4 @@
-package com.errang.app.kotlinandroiddemo.utils
+package com.errang.app.kotlinandroiddemo.extensions
 
 import android.content.Context
 import android.view.View

@@ -1,4 +1,4 @@
-package com.errang.app.kotlinandroiddemo.utils
+package com.errang.app.kotlinandroiddemo.extensions
 
 import android.database.sqlite.SQLiteDatabase
 import org.jetbrains.anko.db.MapRowParser

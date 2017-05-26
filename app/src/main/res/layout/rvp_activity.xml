@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/rl_root"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#7c4dff"
+                android:fitsSystemWindows="false">
+
+    <TextView
+        android:id="@+id/tl_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:text="我的应用"
+        android:textColor="#ffffff"
+        android:textSize="24sp"/>
+    <!--RefreshRecyclerViewPager + Indicator-->
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tl_toolbar"
+        android:layout_marginBottom="20dp">
+
+        <com.errang.app.kotlinandroiddemo.demo_2_recyclerviewpager.widget.RefreshRecyclerViewPager
+            android:id="@+id/rrvp_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.errang.app.kotlinandroiddemo.demo_2_recyclerviewpager.widget.RecyclerViewPager
+                android:id="@+id/rvp_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </com.errang.app.kotlinandroiddemo.demo_2_recyclerviewpager.widget.RefreshRecyclerViewPager>
+
+    </FrameLayout>
+
+</RelativeLayout>

@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import com.bumptech.glide.Glide
 import com.errang.app.kotlinandroiddemo.R
 import com.errang.app.kotlinandroiddemo.demo_0_forecast.model.Forecast
-import com.errang.app.kotlinandroiddemo.utils.ctx
+import com.errang.app.kotlinandroiddemo.extensions.ctx
 import kotlinx.android.synthetic.main.item_demo_0_forecast.view.*
 import java.text.DateFormat
 import java.util.*

@@ -26,6 +26,8 @@
         <activity
             android:name=".demo_0_forecast.ForecastActivity"
             android:label="一个天气预报demo"/>
+        <activity
+            android:name=".demo_2_recyclerviewpager.RecyclerViewPagerActivity"/>
 
     </application>
 

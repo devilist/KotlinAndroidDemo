@@ -1,4 +1,4 @@
-package com.errang.app.kotlinandroiddemo.utils
+package com.errang.app.kotlinandroiddemo.extensions
 
 /**
  * 集合类扩展函数

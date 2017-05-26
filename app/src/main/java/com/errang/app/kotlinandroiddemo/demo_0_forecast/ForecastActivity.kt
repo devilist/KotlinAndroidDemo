@@ -9,8 +9,10 @@ import com.errang.app.kotlinandroiddemo.demo_0_forecast.API.RequestForecastComma
 import com.errang.app.kotlinandroiddemo.demo_0_forecast.adapter.ForecastListAdapter
 import com.errang.app.kotlinandroiddemo.demo_0_forecast.model.Forecast
 import com.errang.app.kotlinandroiddemo.demo_1_db.dao.ForecastDao
+import com.errang.app.kotlinandroiddemo.demo_2_recyclerviewpager.RecyclerViewPagerActivity
 import kotlinx.android.synthetic.main.activity_demo_0_forecast.*
 import org.jetbrains.anko.doAsync
+import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.uiThread
 import kotlin.properties.Delegates
 
@@ -66,6 +68,10 @@ class ForecastActivity : BaseActivity(),
 
     override fun onItemClick(v: View, position: Int, forecast: Forecast) {
         toast(forecast.toString())
+        // kotlin写法
+         startActivity<RecyclerViewPagerActivity>()
+        // java写法
+//        RecyclerViewPagerActivity.starter(this, TAG)
     }
 
     override fun onClick(v: View?) {

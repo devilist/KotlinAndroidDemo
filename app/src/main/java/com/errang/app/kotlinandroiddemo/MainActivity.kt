@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import com.errang.app.kotlinandroiddemo.demo_0_forecast.ForecastActivity
+import com.errang.app.kotlinandroiddemo.demo_2_recyclerviewpager.RecyclerViewPagerActivity
 import kotlinx.android.synthetic.main.activity_main_list.*
 
 class MainActivity : BaseActivity() {
@@ -37,6 +38,7 @@ class MainActivity : BaseActivity() {
     fun createData(): List<Array<String>> {
         val list: MutableList<Array<String>> = ArrayList()
         list.add(arrayOf("demo_0： 天气预报", ForecastActivity::class.java.name))
+        list.add(arrayOf("demo_2： RecyclerViewPager", RecyclerViewPagerActivity::class.java.name))
         return list
     }
 

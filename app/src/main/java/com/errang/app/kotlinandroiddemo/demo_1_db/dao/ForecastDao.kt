@@ -7,10 +7,10 @@ import com.errang.app.kotlinandroiddemo.demo_1_db.model.City
 import com.errang.app.kotlinandroiddemo.demo_1_db.model.DayForecast
 import com.errang.app.kotlinandroiddemo.demo_1_db.table.CityTable
 import com.errang.app.kotlinandroiddemo.demo_1_db.table.DayForecastTable
-import com.errang.app.kotlinandroiddemo.utils.clear
-import com.errang.app.kotlinandroiddemo.utils.parseList
-import com.errang.app.kotlinandroiddemo.utils.parseOpt
-import com.errang.app.kotlinandroiddemo.utils.toVarargArray
+import com.errang.app.kotlinandroiddemo.extensions.clear
+import com.errang.app.kotlinandroiddemo.extensions.parseList
+import com.errang.app.kotlinandroiddemo.extensions.parseOpt
+import com.errang.app.kotlinandroiddemo.extensions.toVarargArray
 import org.jetbrains.anko.db.MapRowParser
 import org.jetbrains.anko.db.insert
 import org.jetbrains.anko.db.select
