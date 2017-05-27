@@ -2,6 +2,7 @@ package com.errang.app.kotlinandroiddemo.demo_0_forecast
 
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
+import android.util.Log
 import android.view.View
 import com.errang.app.kotlinandroiddemo.BaseActivity
 import com.errang.app.kotlinandroiddemo.R
@@ -10,6 +11,7 @@ import com.errang.app.kotlinandroiddemo.demo_0_forecast.adapter.ForecastListAdap
 import com.errang.app.kotlinandroiddemo.demo_0_forecast.model.Forecast
 import com.errang.app.kotlinandroiddemo.demo_1_db.dao.ForecastDao
 import com.errang.app.kotlinandroiddemo.demo_2_recyclerviewpager.RecyclerViewPagerActivity
+import com.errang.app.kotlinandroiddemo.extensions.SpDelegateExt
 import kotlinx.android.synthetic.main.activity_demo_0_forecast.*
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.startActivity
@@ -41,6 +43,8 @@ class ForecastActivity : BaseActivity(),
      */
     private var adapter: ForecastListAdapter by Delegates.notNull()
 
+    // 用lazy委托的方式存储到sp
+    private var zipCode: Long by SpDelegateExt.preference(this, "zip_code", 94043L)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,6 +65,10 @@ class ForecastActivity : BaseActivity(),
                 adapter.setNewData(result.list.asReversed())
             }
             //存数据库
+            Log.d("Preference", "==================")
+            zipCode
+            Log.d("Preference", "==================")
+            zipCode = 94043L
             val dao = ForecastDao()
             dao.saveForecastToLocalDB(result)
         }
@@ -69,7 +77,7 @@ class ForecastActivity : BaseActivity(),
     override fun onItemClick(v: View, position: Int, forecast: Forecast) {
         toast(forecast.toString())
         // kotlin写法
-         startActivity<RecyclerViewPagerActivity>()
+        startActivity<RecyclerViewPagerActivity>()
         // java写法
 //        RecyclerViewPagerActivity.starter(this, TAG)
     }
