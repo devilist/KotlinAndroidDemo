@@ -5,14 +5,18 @@ import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import com.errang.app.kotlinandroiddemo.demo_0_forecast.ForecastActivity
 import com.errang.app.kotlinandroiddemo.demo_2_recyclerviewpager.RecyclerViewPagerActivity
+import com.errang.app.kotlinandroiddemo.demo_3_standard_fun.StandardFun
 import kotlinx.android.synthetic.main.activity_main_list.*
 
 class MainActivity : BaseActivity() {
 
+
+
     // 静态常量（伴随对象）
     companion object {
-        val TAG: String = "MainActivity"
+        const val TAG: String = "MainActivity"
     }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +37,10 @@ class MainActivity : BaseActivity() {
                 e.printStackTrace()
             }
         }
+
+        // 标准库函数
+        val standardFun = StandardFun()
+        standardFun.main()
     }
 
     fun createData(): List<Array<String>> {
@@ -41,7 +49,7 @@ class MainActivity : BaseActivity() {
         list.add(arrayOf("demo_2： RecyclerViewPager", RecyclerViewPagerActivity::class.java.name))
         list.onEach { }.forEach { }
         val item = list[0].takeIf { it.size == 2 }
-        item?.groupingBy {  }?.eachCount()
+        item?.groupingBy { }?.eachCount()
         return list
     }
 

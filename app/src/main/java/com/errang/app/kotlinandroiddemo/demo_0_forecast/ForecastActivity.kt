@@ -43,6 +43,9 @@ class ForecastActivity : BaseActivity(),
      */
     private var adapter: ForecastListAdapter by Delegates.notNull()
 
+    private lateinit var adapter1: ForecastListAdapter
+
+
     // 用lazy委托的方式存储到sp
     private var zipCode: Long by SpDelegateExt.preference(this, "zip_code", 94043L)
 
@@ -56,8 +59,16 @@ class ForecastActivity : BaseActivity(),
     fun initView() {
         forecast_list.layoutManager = LinearLayoutManager(this)
         adapter = ForecastListAdapter()
+        adapter1 = ForecastListAdapter()
         adapter.listener = this
         forecast_list.adapter = adapter
+
+        adapter1.listener = object : ForecastListAdapter.OnItemClickListener {
+
+            override fun onItemClick(v: View, position: Int, forecast: Forecast) {
+                RecyclerViewPagerActivity.starter(this@ForecastActivity, TAG)
+            }
+        }
 
         doAsync {
             val result = RequestForecastCommand("94043").execute()
