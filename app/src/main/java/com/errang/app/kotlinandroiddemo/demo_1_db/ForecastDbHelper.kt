@@ -11,7 +11,7 @@ import org.jetbrains.anko.db.*
  * 数据库简单示例
  * Created by zengpu on 2017/5/24.
  */
-class ForecastDbHelper(context: Context = KotlinApplication.instance)
+class ForecastDbHelper(context: Context = KotlinApplication.instance.applicationContext)
     : ManagedSQLiteOpenHelper(context, ForecastDbHelper.DB_NAME, null, ForecastDbHelper.DB_VERSION) {
 
     companion object {

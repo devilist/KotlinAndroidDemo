@@ -42,17 +42,17 @@ class ForecastListAdapter : RecyclerView.Adapter<ForecastListAdapter.ViewHolder>
         if (null != forecast)
             with(forecast) {
                 Glide.with(holder.itemView.ctx)
-                        .load("http://openweathermap.org/img/w/${forecast.weather[0].icon}.png")
+                        .load("http://openweathermap.org/img/w/${weather[0].icon}.png")
                         .into(holder.itemView.icon)
 
                 holder.itemView.date.text =
-                        DateFormat.getDateInstance(DateFormat.MEDIUM, Locale.getDefault()).format(forecast.dt * 1000)
-                holder.itemView.description.text = forecast.weather[0].description
-                holder.itemView.maxTemperature.text = forecast.temp.max.toInt().toString() + "°C"
-                holder.itemView.minTemperature.text = forecast.temp.min.toInt().toString() + "°C"
+                        DateFormat.getDateInstance(DateFormat.MEDIUM, Locale.getDefault()).format(dt * 1000)
+                holder.itemView.description.text = weather[0].description
+                holder.itemView.maxTemperature.text = temp.max.toInt().toString() + "°C"
+                holder.itemView.minTemperature.text = temp.min.toInt().toString() + "°C"
 
                 holder.itemView.setOnClickListener {
-                    listener?.onItemClick(holder.itemView, position, forecast)
+                    listener?.onItemClick(it, position, this)
                 }
             }
     }
