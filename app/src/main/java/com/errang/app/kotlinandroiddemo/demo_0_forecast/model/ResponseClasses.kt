@@ -8,7 +8,9 @@ import java.io.Serializable
  */
 
 data class ForecastResult(val city: City,
-                          val list: MutableList<Forecast>)
+                          val list: MutableList<Forecast>) {
+    val temp = city.country
+}
 
 data class City(@SerializedName(value = "id") val id: Long,
                 val name: String,

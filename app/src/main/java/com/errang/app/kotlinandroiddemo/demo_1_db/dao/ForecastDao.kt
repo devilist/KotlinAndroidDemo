@@ -19,7 +19,7 @@ import org.jetbrains.anko.db.select
  * dao层
  * Created by zengpu on 2017/5/24.
  */
-class ForecastDao(val forecastDbHelper: ForecastDbHelper = ForecastDbHelper.instance) {
+class ForecastDao(private val forecastDbHelper: ForecastDbHelper = ForecastDbHelper.instance) {
 
     /**
      * 存数据

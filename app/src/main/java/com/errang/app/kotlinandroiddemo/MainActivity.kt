@@ -10,8 +10,6 @@ import kotlinx.android.synthetic.main.activity_main_list.*
 
 class MainActivity : BaseActivity() {
 
-
-
     // 静态常量（伴随对象）
     companion object {
         const val TAG: String = "MainActivity"
@@ -25,7 +23,7 @@ class MainActivity : BaseActivity() {
         initView()
     }
 
-    fun initView() {
+    private fun initView() {
         rv_list.layoutManager = LinearLayoutManager(this)
         rv_list.adapter = MainListAdapter(createData()) {
             _, _, className ->
@@ -43,7 +41,7 @@ class MainActivity : BaseActivity() {
         standardFun.main()
     }
 
-    fun createData(): List<Array<String>> {
+    private fun createData(): List<Array<String>> {
         val list: MutableList<Array<String>> = ArrayList()
         list.add(arrayOf("demo_0： 天气预报", ForecastActivity::class.java.name))
         list.add(arrayOf("demo_2： RecyclerViewPager", RecyclerViewPagerActivity::class.java.name))

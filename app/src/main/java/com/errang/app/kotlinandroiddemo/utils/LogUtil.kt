@@ -7,21 +7,21 @@ import android.util.Log
  * Created by zengpu on 2017/5/26.
  */
 object LogUtil {
-    var isDebugMode = true
+    private var isDebugMode = true
 
-    val VERBOSE = 1
+    private const val VERBOSE = 1
 
-    val DEBUG = 2
+    private const val DEBUG = 2
 
-    val INFO = 3
+    private const val INFO = 3
 
-    val WARN = 4
+    private const val WARN = 4
 
-    val ERROR = 5
+    private const val ERROR = 5
 
-    val NOTHING = 6
+    private const val NOTHING = 6
 
-    var LEVEL = if (isDebugMode) VERBOSE else NOTHING
+    private var LEVEL = if (isDebugMode) VERBOSE else NOTHING
 
     fun v(tag: String, msg: String) {
         if (LEVEL <= VERBOSE) {

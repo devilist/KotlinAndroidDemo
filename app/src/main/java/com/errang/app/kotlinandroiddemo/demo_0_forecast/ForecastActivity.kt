@@ -72,6 +72,7 @@ class ForecastActivity : BaseActivity(),
 
         doAsync {
             val result = RequestForecastCommand("94043").execute()
+            Log.d("Preference", "==================temp " + result.temp)
             uiThread {
                 adapter.setNewData(result.list.asReversed())
             }
