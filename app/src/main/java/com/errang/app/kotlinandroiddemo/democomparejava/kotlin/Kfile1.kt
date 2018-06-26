@@ -17,4 +17,16 @@ fun kPrintBooks(city: KCity?): Unit {
             it.print()
         }
     }
+
+    city?.let {
+        it.kBookStore?.let {
+            it.categoryList?.forEach {
+                it?.let {
+                    it.bookList?.forEach {
+                        print(it ?: "")
+                    }
+                }
+            }
+        }
+    }
 }

@@ -24,4 +24,5 @@ class DelegateList<T> : List<T> {
     override fun subList(fromIndex: Int, toIndex: Int): List<T> = inner.subList(fromIndex, toIndex)
 }
 
+// 类委托
 class DelegateList1<T>(inner: List<T> = ArrayList<T>()) : List<T> by inner
