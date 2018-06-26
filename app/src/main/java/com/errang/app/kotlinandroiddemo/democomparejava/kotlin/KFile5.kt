@@ -1,5 +1,8 @@
 package com.errang.app.kotlinandroiddemo.democomparejava.kotlin
 
+import com.errang.app.kotlinandroiddemo.democomparejava.java.IJInterface
+import com.errang.app.kotlinandroiddemo.democomparejava.java.JBook
+
 
 fun test5() {
 //    varString = "sdsd"
@@ -26,3 +29,11 @@ class DelegateList<T> : List<T> {
 
 // 类委托
 class DelegateList1<T>(inner: List<T> = ArrayList<T>()) : List<T> by inner
+
+
+val jinterface = object : IJInterface {
+
+    override fun method(para1: String, para2: MutableList<String?>?, book: JBook?) {
+
+    }
+}

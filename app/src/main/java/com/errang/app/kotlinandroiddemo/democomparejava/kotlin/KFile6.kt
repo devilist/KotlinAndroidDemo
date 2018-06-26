@@ -71,10 +71,29 @@ fun test6(city: JCity) {
     }
 }
 
-fun retunFuns(inFun: (Int, Int) -> Int): (Int) -> Float {
+class Goods(val price: Float, val configure: Int)
 
-    val outFun = { int: Int -> int.toFloat() }
+fun calcuPrice(goods: Goods, oriPriceFun: (Goods) -> Float): (Float) -> Float {
 
-    return outFun
+    val oriPrice = oriPriceFun(goods)
+    return when {
+        oriPrice < 1000 -> { ori: Float -> ori * 0.9f + 135 }
+        oriPrice < 2000 -> { ori: Float -> ori * 0.85f }
+        oriPrice < 5000 -> { ori: Float -> ori * 0.73f }
+        else -> { ori: Float -> ori * 0.67f }
+    }
+}
 
+fun testPrice() {
+    val oriPrice = { goods: Goods ->
+        when (goods.configure) {
+            1 -> goods.price * 0.8f + 1569
+            2 -> (goods.price + 139f) * 2.14f
+            else -> goods.price
+        }
+    }
+    val goods = Goods(387.4f, 2)
+    val sellPrice = calcuPrice(goods, oriPrice)
+
+    print(sellPrice(1999f))
 }
