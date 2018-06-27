@@ -6,6 +6,7 @@ import android.support.v7.widget.LinearLayoutManager
 import com.errang.app.kotlinandroiddemo.demo_0_forecast.ForecastActivity
 import com.errang.app.kotlinandroiddemo.demo_2_recyclerviewpager.RecyclerViewPagerActivity
 import com.errang.app.kotlinandroiddemo.demo_3_standard_fun.StandardFun
+import com.errang.app.kotlinandroiddemo.democomparejava.kotlin.KActivity
 import kotlinx.android.synthetic.main.activity_main_list.*
 
 class MainActivity : BaseActivity() {
@@ -45,6 +46,7 @@ class MainActivity : BaseActivity() {
         val list: MutableList<Array<String>> = ArrayList()
         list.add(arrayOf("demo_0： 天气预报", ForecastActivity::class.java.name))
         list.add(arrayOf("demo_2： RecyclerViewPager", RecyclerViewPagerActivity::class.java.name))
+        list.add(arrayOf("demo_3： DSL", KActivity::class.java.name))
         list.onEach { }.forEach { }
         val item = list[0].takeIf { it.size == 2 }
         item?.groupingBy { }?.eachCount()

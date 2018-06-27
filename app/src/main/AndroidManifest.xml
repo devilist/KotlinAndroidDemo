@@ -28,6 +28,7 @@
             android:label="一个天气预报demo"/>
         <activity
             android:name=".demo_2_recyclerviewpager.RecyclerViewPagerActivity"/>
+        <activity android:name=".democomparejava.kotlin.KActivity" />
 
     </application>
 
