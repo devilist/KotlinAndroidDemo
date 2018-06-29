@@ -1,5 +1,7 @@
 package com.errang.app.kotlinandroiddemo.democomparejava.kotlin
 
+import com.errang.app.kotlinandroiddemo.democomparejava.java.JBook
+
 
 var varString: String = "kotlin"
     private set
@@ -7,6 +9,7 @@ var varString: String = "kotlin"
 
 fun test() {
     varString = "ddddd"
+    KPerson.eyeNum
 }
 
 
@@ -63,8 +66,15 @@ class Student(var _name: String, gender: Int = -1) : KPerson(_name, gender) {
 
     override fun sleep() {
         print(" student sleep")
+        val book = JBook("book","",10f)
+        book.name
     }
 }
+
+object S {
+    val student = Student("name", 2)
+}
+
 
 // 对子类作出严格限制
 sealed class SealK() {

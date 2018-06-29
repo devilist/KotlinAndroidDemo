@@ -4,6 +4,8 @@ import android.util.Log;
 
 import com.errang.app.kotlinandroiddemo.democomparejava.kotlin.KBook;
 import com.errang.app.kotlinandroiddemo.democomparejava.kotlin.KPerson;
+import com.errang.app.kotlinandroiddemo.democomparejava.kotlin.Kfile1Kt;
+import com.errang.app.kotlinandroiddemo.democomparejava.kotlin.S;
 import com.errang.app.kotlinandroiddemo.utils.LogUtil;
 
 import java.util.ArrayList;
@@ -71,5 +73,8 @@ public class JTest {
         KPerson.Companion.height();
         KPerson.Companion.weight();
         KPerson.weight();
+
+        KPerson person = new KPerson("zengpu",1);
+        String name = person.getName();
     }
 }

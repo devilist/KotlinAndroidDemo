@@ -92,7 +92,7 @@ fun testPrice() {
             else -> goods.price
         }
     }
-    val goods = Goods(387.4f, 2)
+    val goods = Goods(1387.4f, 2)
     val sellPrice = calcuPrice(goods, oriPrice)
 
     print(sellPrice(1999f))
