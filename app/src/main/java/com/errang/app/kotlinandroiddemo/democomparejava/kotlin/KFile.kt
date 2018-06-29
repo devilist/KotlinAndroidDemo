@@ -36,19 +36,19 @@ fun KFindMax() {
 
     //=================================================================================
     // method 1
-    maxBooks = bookList.sortedByDescending { it.price }.filter { it.price == bookList[0].price }
+    maxBooks = bookList.sortedByDescending { it.price }.groupBy { it.price }.maxBy { it.key }!!.value
 
     // method 2
-    maxBooks = bookList.sortedWith(compareByDescending { it.price }).filter { it.price == bookList[0].price }
+    maxBooks = bookList.sortedWith(compareByDescending { it.price }).groupBy { it.price }.maxBy { it.key }!!.value
 
     // method 3
     maxBooks = bookList.sortedWith(Comparator<KBook> { o1, o2 ->
         if (o1.price - o2.price > 0) 1 else 0
-    }).filter { it.price == bookList[0].price }
+    }).groupBy { it.price }.maxBy { it.key }!!.value
 
     // method 4
     maxBooks = bookList.sortedWith(Comparator { o1, o2 -> if (o1 - o2 > 0) 1 else 0 })
-            .filter { it.price == bookList[0].price }
+            .groupBy { it.price }.maxBy { it.key }!!.value
 
     print(maxBooks)
 
@@ -83,7 +83,7 @@ fun KFindMax() {
 //    }
     val specalList = bookList.asSequence()
             .filter(KBook.filterPredicate)
-            .sortedWith(Comparator { o1, o2 -> return@Comparator if (o1 > o2) 1 else 0 })
+            .sortedWith(Comparator { o1, o2 ->  if (o1 > o2) 1 else 0 })
             .groupBy(KBook::price)  // 成员引用
             .toList()
 
