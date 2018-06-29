@@ -18,11 +18,10 @@ interface IPerson {
 }
 
 open class KPerson(_name: String, val gender: Int = -1) : IPerson {
-    val name: String
+    val name: String = _name
     var age: Int
 
     init {
-        name = _name
         this.age = 0
     }
 
@@ -42,8 +41,7 @@ open class KPerson(_name: String, val gender: Int = -1) : IPerson {
     companion object {
         val eyeNum = 2
         const val legNum = 2
-        @JvmField
-        val earNum = 2
+        const val earNum = 2
         @JvmStatic
         val handNum = 2
 
@@ -57,17 +55,19 @@ open class KPerson(_name: String, val gender: Int = -1) : IPerson {
 
 class Student(var _name: String, gender: Int = -1) : KPerson(_name, gender) {
 
-    var intro: String = "name:{$name},gender:{$gender}"
-        private set
+    val intro: String = "name:{$name},gender:{$gender}"
         get() {
             val tmp = field
             return "$tmp,age:{$age}"
         }
 
+
     override fun sleep() {
         print(" student sleep")
-        val book = JBook("book","",10f)
+        val book = JBook("book", "", 10f)
         book.name
+        val kbook = KBook("","",0f)
+        kbook.print()
     }
 }
 
@@ -78,5 +78,6 @@ object S {
 
 // 对子类作出严格限制
 sealed class SealK() {
+
 }
 

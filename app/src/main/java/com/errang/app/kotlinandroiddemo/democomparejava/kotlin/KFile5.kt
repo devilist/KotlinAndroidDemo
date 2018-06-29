@@ -33,7 +33,7 @@ class DelegateList1<T>(inner: List<T> = ArrayList<T>()) : List<T> by inner
 
 val jinterface = object : IJInterface {
 
-    override fun method(para1: String, para2: MutableList<String?>?, book: JBook?) {
+    override fun method(para1: String, para2: MutableList<String>, book: JBook) {
 
     }
 }

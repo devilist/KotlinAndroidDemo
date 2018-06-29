@@ -12,9 +12,9 @@ fun KBook?.print() = if (null != this) print(this) else Unit
 fun kPrintBooks(city: KCity?): Unit {
     // 安全调用运算符
     city?.kBookStore?.categoryList?.forEach {
-        it?.bookList?.forEach {
-            print(it ?: "")   // elvis运算符
-            it.print()
+        it?.bookList?.forEach {book->
+            print(book ?: "")   // elvis运算符
+            book.print()
         }
     }
 

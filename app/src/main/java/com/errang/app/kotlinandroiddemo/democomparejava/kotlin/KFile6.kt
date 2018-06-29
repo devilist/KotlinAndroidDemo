@@ -40,8 +40,9 @@ fun test6(city: JCity) {
         null != bookStore
     }
 
-    city.bookStore?.let { jBookStore ->
+   city.bookStore?.let { jBookStore ->
         print("bookStore is not null !")
+        jBookStore.categoryList
     }
 
     city.apply {
@@ -56,9 +57,10 @@ fun test6(city: JCity) {
         setOnClickListener {
             print("onClick!")
         }
-    }
+    }.text = "ffdfd"
 
-    city.also { jBookStore ->
+    city.also {
+        it.bookStore
         print("bookStore !")
     }
 

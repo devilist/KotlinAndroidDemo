@@ -76,5 +76,6 @@ public class JTest {
 
         KPerson person = new KPerson("zengpu",1);
         String name = person.getName();
+
     }
 }

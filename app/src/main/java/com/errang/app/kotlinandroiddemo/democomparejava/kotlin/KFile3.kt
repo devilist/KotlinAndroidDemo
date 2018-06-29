@@ -46,7 +46,7 @@ class TypeKotlin {
         // 安全调用运算符
         varNullBook?.price = 19f
         // elvis运算符
-        val s0: String = varNull0 ?: "null"
+        val s0: String = varNull0 ?: "default"
         // 非空断言
         val s1: String = varNull0!!
 
